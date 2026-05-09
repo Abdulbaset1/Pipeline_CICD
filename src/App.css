@@ -1,0 +1,647 @@
+.page {
+  min-height: 100vh;
+  display: block;
+}
+
+#wrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 28px 120px;
+}
+
+.flag__birthday {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  inset-inline: 0;
+  top: -10px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.flag__left,
+.flag__right {
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.2));
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.title {
+  position: relative;
+}
+
+.title h1 {
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.happy,
+.birthday {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: clamp(42px, 6vw, 86px);
+  color: #fff4f4;
+  text-shadow: 0 8px 24px rgba(80, 20, 40, 0.35);
+}
+
+.happy span,
+.birthday span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  animation: letterGlow 0.9s ease forwards;
+  animation-delay: var(--t);
+}
+
+.hat {
+  position: absolute;
+  top: -24px;
+  right: 18px;
+  transform: rotate(10deg);
+}
+
+.date__of__birth {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(57, 21, 33, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.date__of__birth i {
+  color: #ffd369;
+}
+
+.btn button {
+  border: none;
+  background: linear-gradient(135deg, #ff6b88, #ff9f68);
+  padding: 14px 28px;
+  border-radius: 999px;
+  color: #1a0c12;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(236, 89, 108, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(236, 89, 108, 0.6);
+}
+
+.mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.box__account {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 22px 26px 46px;
+  border-radius: 26px;
+  position: relative;
+  width: min(360px, 100%);
+  box-shadow: 0 24px 50px rgba(23, 9, 18, 0.3);
+}
+
+.box__account .image img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.name {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.balloon_one,
+.balloon_two {
+  position: absolute;
+  top: -36px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.balloon_one {
+  left: -22px;
+}
+
+.balloon_two {
+  right: -22px;
+  animation-delay: 1.5s;
+}
+
+.cricle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 65%);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+.text__cricle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.text__cricle span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--i) * 12deg)) translate(0, -110px);
+}
+
+.cricle i {
+  font-size: 24px;
+  color: #ff688d;
+  text-shadow: 0 0 16px rgba(255, 104, 141, 0.8);
+}
+
+.decorate_star {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6d1, transparent 70%);
+  animation: sparkle 2.6s ease-in-out infinite;
+  animation-delay: var(--t);
+  filter: drop-shadow(0 0 16px rgba(255, 240, 200, 0.8));
+}
+
+.star1 {
+  top: 20%;
+  left: 6%;
+}
+
+.star2 {
+  top: 14%;
+  right: 14%;
+}
+
+.star3 {
+  top: 40%;
+  right: 4%;
+}
+
+.star4 {
+  bottom: 24%;
+  left: 10%;
+}
+
+.star5 {
+  bottom: 12%;
+  right: 20%;
+}
+
+.decorate_flower--one,
+.decorate_flower--two,
+.decorate_flower--three {
+  position: absolute;
+  animation: drift 10s ease-in-out infinite;
+  animation-delay: var(--t);
+}
+
+.decorate_flower--one {
+  top: 20%;
+  right: 22%;
+}
+
+.decorate_flower--two {
+  bottom: 20%;
+  left: 14%;
+}
+
+.decorate_flower--three {
+  bottom: 35%;
+  right: 12%;
+}
+
+.decorate_bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+}
+
+.smiley__icon {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.boxMail {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 16, 0.7);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 50;
+}
+
+.boxMail.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.boxMail-container {
+  background: #fff;
+  border-radius: 22px;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  width: min(92vw, 900px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.boxMail-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.card1,
+.card2 {
+  background: #fff7f3;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #3c1e2b;
+}
+
+.card1 h3,
+.card2 h3 {
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+}
+
+.card2 h2 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.userImg img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.username {
+  font-weight: 700;
+  margin: 0;
+}
+
+.underline {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #ff688d;
+  margin-top: 6px;
+}
+
+.imageCute img,
+.imageCute2 img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.box__letter {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 8, 16, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 60;
+}
+
+.box__letter.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.box__letter .close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.letter__border {
+  width: min(94vw, 720px);
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  transform: translateY(20px) scale(0.98);
+  opacity: 0;
+  transition: all 0.4s ease;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.letter__border.is-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.letter__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  color: #a33c5f;
+}
+
+.letter__body {
+  position: relative;
+  padding-top: 12px;
+}
+
+#heart__letter,
+.love__img,
+#mewmew {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.5s ease;
+}
+
+#heart__letter {
+  top: -12px;
+  left: 0;
+  width: 70px;
+}
+
+.love__img {
+  top: -12px;
+  right: 0;
+  width: 120px;
+}
+
+#mewmew {
+  bottom: -20px;
+  right: 50%;
+  transform: translateX(50%) scale(0.7);
+  width: 120px;
+}
+
+#heart__letter.animationOp,
+.love__img.animationOp,
+#mewmew.animationOp {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.text__letter {
+  margin-top: 40px;
+  background: #fff4f2;
+  border-radius: 16px;
+  padding: 18px;
+  font-size: 16px;
+  color: #4b2332;
+  min-height: 180px;
+  line-height: 1.6;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  opacity: 0;
+}
+
+.heart.animation {
+  animation: floatHearts 6s ease-in-out infinite;
+  opacity: 1;
+}
+
+.heart:nth-child(1) {
+  left: 12%;
+  top: 70%;
+  animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+  left: 28%;
+  top: 82%;
+  animation-delay: 0.8s;
+}
+
+.heart:nth-child(3) {
+  left: 46%;
+  top: 74%;
+  animation-delay: 1.6s;
+}
+
+.heart:nth-child(4) {
+  left: 62%;
+  top: 88%;
+  animation-delay: 2.2s;
+}
+
+.heart:nth-child(5) {
+  left: 72%;
+  top: 68%;
+  animation-delay: 3s;
+}
+
+.heart:nth-child(6) {
+  left: 86%;
+  top: 80%;
+  animation-delay: 3.6s;
+}
+
+.mail-fab {
+  position: fixed;
+  right: 28px;
+  bottom: 24px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  z-index: 30;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mail-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(16, 8, 14, 0.3);
+}
+
+@keyframes letterGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(6deg);
+  }
+}
+
+@keyframes floatHearts {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .flag__left,
+  .flag__right {
+    width: 200px;
+  }
+
+  .hat {
+    right: 0;
+  }
+
+  .boxMail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .box__account {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  #wrapper {
+    padding: 24px 16px 120px;
+  }
+
+  .date__of__birth {
+    font-size: 18px;
+  }
+
+  .mail-fab {
+    right: 16px;
+  }
+}
