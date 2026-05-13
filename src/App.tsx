@@ -18,7 +18,7 @@ const letterTitle = 'To you'
 const letterBody =
     'My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕'
 
-function App() {
+function App() { 
     const [typedDate, setTypedDate] = useState('')
     const [showDateStars, setShowDateStars] = useState(false)
     const [isMailOpen, setIsMailOpen] = useState(false)
@@ -165,7 +165,7 @@ function App() {
                     <div className="btn">
                         <button id="btn__letter" type="button" onClick={openLetter}>
                             <div className="mail" onClick={() => setIsMailOpen(true)}>
-                                Click Here Mehwish
+                                Click Here Rehana
                                 <i className="fa-regular fa-envelope" aria-hidden="true" />
                             </div>
                         </button>
@@ -179,7 +179,7 @@ function App() {
                         </div>
                         <div className="name">
                             <i className="fa-solid fa-heart" aria-hidden="true" />
-                            <span>Dear Mehwish</span>
+                            <span>Dear Rehana</span>
                             <i className="fa-solid fa-heart" aria-hidden="true" />
                         </div>
                         <div className="balloon_one">
